@@ -1,0 +1,29 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "experimentguard",
+    "analyze",
+    "--data",
+    "data/raw/cookie_cats.csv",
+    "--manifest",
+    "data/source_manifest.json",
+    "--config",
+    "configs/experiment.yaml",
+    "--out",
+    "reports/benchmark-20261006/analysis"
+  ],
+  "exit_code": 0,
+  "measurement_scope": "Fresh Python CLI process: imports, CSV validation, analysis, figures, memo and export",
+  "wall_seconds": 2.5736,
+  "sampled_peak_rss_mib": 193.555,
+  "rss_sample_interval_seconds": 0.01,
+  "rss_scope": "Sum of launcher and recursive child-process RSS; shared pages may be counted more than once",
+  "maximum_process_count": 3,
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "psutil_version": "7.2.2",
+  "data_sha256": "5ab54d761fbddcd50de7b88e4eaf7837cba4569474f50c043a4d17ee342c46bd",
+  "protocol_sha256": "d9bc1e9b684eb7238015db2ba4ecb6d55cba9313f1cdbba05f1527101be4e512",
+  "limitations": "RSS is sampled at 10ms and is distinct from tracemalloc Python allocations; no revenue or causal deployment claim."
+}
