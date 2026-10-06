@@ -148,3 +148,10 @@ Planning complete. Handed off for full execution.
 
 
 
+
+
+## 6 October 2026: portfolio remediation execution
+
+Benchmark receipts now separate fresh-process CLI time, inner timing and sampled process-tree RSS. Public case: 2.5736s/193.555MiB. Constructed balanced synthetic 100k workload: 2.6014s/195.602MiB, exit 0. No experimental inference is drawn from synthetic capacity data. Original protocol/data/negative findings preserved.
+
+Evidence: local branch fix/portfolio-remediation; preserved originals and receipts under the workspace .portfolio-audit/2026-10-06/remediation folder. No remote push, merge, external post or cloud deployment was performed.

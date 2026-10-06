@@ -128,7 +128,7 @@ py -3.11 -m venv .venv
 | **Secondary & Exploratory** | Holm-Bonferroni correction | Day-1 effect: -0.59 pp (Holm $p=0.1488$), Engagement: 52.46 vs 51.30 rounds (Holm $p=0.3759$) | `reports/cookie-cats-v1/analysis.json` |
 | **Sensitivity** | P99 Winsorization & 10k Bootstrap | P99 Capped diff: -0.28 rounds; Bootstrap CI: [-1.34 pp, -0.31 pp] | `reports/cookie-cats-v1/analysis.json` |
 | **Prospective Power** | 80% Power at $\alpha=0.05$ | 0.25 pp $\rightarrow N=807,476$; 0.50 pp $\rightarrow N=202,800$; 1.00 pp $\rightarrow N=51,160$ | `reports/cookie-cats-v1/power_plan.csv` |
-| **Performance Benchmark** | $<60\text{ s}$, $<1\text{ GB}$ on 100k rows | **7.70 seconds**, **28.08 MB peak memory** (AMD64, Python 3.11.9) | `reports/cookie-cats-v1/run_metadata.json` |
+| **Performance Benchmark** | <60 seconds, <1 GiB at 100,000 rows | Synthetic capacity case: 2.60 s and 195.6 MiB sampled process-tree RSS; not experimental evidence | [100k workload receipt](reports/benchmark-synthetic-100000/receipt.json) |
 | **Test Coverage** | 100% test pass rate | 43 unit & integration tests passing | `tests/` |
 
 ---
@@ -145,3 +145,9 @@ py -3.11 -m venv .venv
 ## 6. License
 
 This project is licensed under the [MIT License](LICENSE) &copy; 2026 Luqman (luqshzeeq).
+
+## Benchmark measurement scope
+
+The public 90,189-row CLI case measured 2.57 seconds and 193.6 MiB sampled process-tree RSS. [Receipt](reports/benchmark-20261006/receipt.json). The 100,000-row capacity case uses constructed balanced synthetic arms and does not support experimental inference. RSS includes the Windows virtual-environment launcher and child processes, sampled every 10 ms. It differs from Python-only tracemalloc allocations. Inner run_metadata timing and full fresh-process CLI timing must not be pooled. Original protocol, data and negative A/B findings are unchanged.
+
+Reproduce with python scripts/benchmark_cli.py and python scripts/benchmark_cli.py --synthetic-rows 100000.

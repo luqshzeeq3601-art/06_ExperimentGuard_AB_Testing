@@ -1,0 +1,30 @@
+{
+  "command": [
+    "python",
+    "-m",
+    "experimentguard",
+    "analyze",
+    "--data",
+    "reports/benchmark-synthetic-100000/input.csv",
+    "--config",
+    "configs/experiment.yaml",
+    "--out",
+    "reports/benchmark-synthetic-100000/analysis"
+  ],
+  "dataset_kind": "synthetic performance-only resample",
+  "synthetic_allocation": "Constructed balanced arms for capacity testing; no experimental inference",
+  "rows": 100000,
+  "exit_code": 0,
+  "measurement_scope": "Fresh Python CLI process: imports, CSV validation, analysis, figures, memo and export",
+  "wall_seconds": 2.6014,
+  "sampled_peak_rss_mib": 195.602,
+  "rss_sample_interval_seconds": 0.01,
+  "rss_scope": "Sum of launcher and recursive child-process RSS; shared pages may be counted more than once",
+  "maximum_process_count": 3,
+  "python": "3.11.9",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "psutil_version": "7.2.2",
+  "data_sha256": "62f8730aa4a27b859ddb4c5d98823e1726cf1b45ac66c84a60b3e7a0a976d693",
+  "protocol_sha256": "d9bc1e9b684eb7238015db2ba4ecb6d55cba9313f1cdbba05f1527101be4e512",
+  "limitations": "RSS is sampled at 10ms and is distinct from tracemalloc Python allocations; no revenue or causal deployment claim."
+}

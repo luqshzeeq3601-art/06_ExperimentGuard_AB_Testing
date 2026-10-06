@@ -24,6 +24,7 @@ dev = [
     "ruff>=0.1.0",
     "ipykernel>=6.25.0",
     "nbconvert>=7.7.0",
+    "psutil>=7.2.2",
 ]
 
 [tool.setuptools.packages.find]

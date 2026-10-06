@@ -26,6 +26,10 @@ reports/ci-*/
 reports/tmp*/
 reports/quality-check/
 reports/power-v1/
+reports/benchmark-*/input.csv
+reports/benchmark-synthetic-*/analysis/
+reports/benchmark-20261006/analysis/
+reports/benchmark-*/cli.log
 
 # Package build artifacts
 *.egg-info/

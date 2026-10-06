@@ -46,3 +46,8 @@
 ## 3. New decision format
 
 Record ID, date, triggering evidence, decision/rationale, affected documents/tasks, and verification impact. Method changes after outcome inspection must be logged as deviations without silently replacing the original analysis.
+
+
+## 6 October 2026: remediation evidence decision
+
+Preserve the original models and evaluation records. Repairs address packaging, evidence generation or display without retuning against viewed outcomes. Benchmark receipts now separate fresh-process CLI time, inner timing and sampled process-tree RSS. Public case: 2.5736s/193.555MiB. Constructed balanced synthetic 100k workload: 2.6014s/195.602MiB, exit 0. No experimental inference is drawn from synthetic capacity data. Original protocol/data/negative findings preserved.

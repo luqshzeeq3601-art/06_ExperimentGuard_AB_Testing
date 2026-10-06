@@ -102,3 +102,10 @@ All implementation tasks T01 through T13 are completed and verified.
   - Files: `LICENSE`, `app.py`, `app/streamlit_app.py`, `.streamlit/config.toml`, `requirements-app.txt`, `README.md`.
   - Acceptance: MIT license, GitHub repo description/topics configured, multi-tab interactive Streamlit dashboard (Case Study, Power Simulator, Live CSV Evaluator), `test_validate_dataframe` verified (43/43 tests passing).
 
+
+
+## Portfolio remediation: 6 October 2026
+
+Benchmark receipts now separate fresh-process CLI time, inner timing and sampled process-tree RSS. Public case: 2.5736s/193.555MiB. Constructed balanced synthetic 100k workload: 2.6014s/195.602MiB, exit 0. No experimental inference is drawn from synthetic capacity data. Original protocol/data/negative findings preserved.
+
+- [x] Benchmark evidence corrected; original V1 analysis remains complete.
