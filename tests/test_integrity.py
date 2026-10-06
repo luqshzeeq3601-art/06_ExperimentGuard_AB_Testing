@@ -5,6 +5,7 @@ from __future__ import annotations
 import tempfile
 from pathlib import Path
 
+import pandas as pd
 import pytest
 from scipy.stats import binomtest
 
@@ -182,3 +183,38 @@ def test_srm_diagnostic():
         assert any("Sample Ratio Mismatch detected" in b for b in integ.blockers)
     finally:
         Path(tmp_srm).unlink(missing_ok=True)
+
+
+def test_validate_dataframe():
+    from experimentguard.data import validate_dataframe
+
+    # Valid DataFrame
+    df_valid = pd.DataFrame(
+        {
+            "userid": [1, 2, 3, 4],
+            "version": ["gate_30", "gate_30", "gate_40", "gate_40"],
+            "sum_gamerounds": [10, 0, 5, 20],
+            "retention_1": [True, False, True, False],
+            "retention_7": [False, False, True, False],
+        }
+    )
+    clean_df, rep = validate_dataframe(df_valid)
+    assert rep.is_valid is True
+    assert rep.retained_rows == 4
+    assert clean_df is not None
+    assert len(clean_df) == 4
+
+    # Invalid DataFrame with duplicate userid
+    df_dup = pd.DataFrame(
+        {
+            "userid": [1, 1, 3, 4],
+            "version": ["gate_30", "gate_30", "gate_40", "gate_40"],
+            "sum_gamerounds": [10, 0, 5, 20],
+            "retention_1": [True, False, True, False],
+            "retention_7": [False, False, True, False],
+        }
+    )
+    clean_df_dup, rep_dup = validate_dataframe(df_dup)
+    assert rep_dup.is_valid is False
+    assert clean_df_dup is None
+    assert any("Duplicate user IDs" in b for b in rep_dup.blockers)

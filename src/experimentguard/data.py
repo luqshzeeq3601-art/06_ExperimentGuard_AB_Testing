@@ -310,3 +310,25 @@ def load_and_validate_dataset(
         }
     )
     return df, report
+
+
+def validate_dataframe(
+    df: pd.DataFrame,
+    control_arm: str = "gate_30",
+    treatment_arm: str = "gate_40",
+) -> tuple[pd.DataFrame | None, ValidationReport]:
+    """Validate an in-memory DataFrame using the strict ExperimentGuard ITT protocol."""
+    import tempfile
+
+    with tempfile.NamedTemporaryFile(
+        mode="w", suffix=".csv", delete=False, newline="", encoding="utf-8"
+    ) as f:
+        df.to_csv(f, index=False)
+        tmp_path = Path(f.name)
+    try:
+        return load_and_validate_dataset(
+            tmp_path, control_arm=control_arm, treatment_arm=treatment_arm
+        )
+    finally:
+        if tmp_path.exists():
+            tmp_path.unlink()
