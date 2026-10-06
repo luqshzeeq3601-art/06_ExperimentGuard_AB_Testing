@@ -95,3 +95,10 @@ All implementation tasks T01 through T13 are completed and verified.
   - Verify: Full pytest suite (42 tests) passed, CLI and notebook reproduce matching figures and tables.
 
 **M4 checkpoint:** Verified and passed.
+
+## 5. Portfolio polish & live demonstration
+
+- [x] **Post-M4 Portfolio Polish & Streamlit Dashboard** (Completed 6 Oct 2026)
+  - Files: `LICENSE`, `app.py`, `app/streamlit_app.py`, `.streamlit/config.toml`, `requirements-app.txt`, `README.md`.
+  - Acceptance: MIT license, GitHub repo description/topics configured, multi-tab interactive Streamlit dashboard (Case Study, Power Simulator, Live CSV Evaluator), `test_validate_dataframe` verified (43/43 tests passing).
+

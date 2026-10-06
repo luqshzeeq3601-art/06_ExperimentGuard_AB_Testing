@@ -125,4 +125,26 @@ Planning complete. Handed off for full execution.
    - `ruff check .` $\rightarrow$ All checks passed.
    - `ruff format --check .` $\rightarrow$ 40 files already formatted.
 
+## 4. Release Polish & Interactive Dashboard Session: 6 October 2026
+
+### Completed Tasks & Verification
+
+1. **Open Source Licensing & Repository Metadata:**
+   - Added `LICENSE` (MIT License &copy; 2026 Luqman / luqshzeeq).
+   - Configured GitHub repository description and topics (`ab-testing`, `causal-inference`, `hypothesis-testing`, `sample-ratio-mismatch`, `power-analysis`, `decision-rules`, `cookie-cats`, `machine-learning`, `python`, `data-science`, `streamlit`) via `gh repo edit`.
+2. **Interactive Streamlit Application:**
+   - Installed `streamlit` (v1.65.0) and created `requirements-app.txt` for cloud deployments.
+   - Implemented root `app.py` entrypoint and modular multi-tab dashboard in `app/streamlit_app.py`.
+   - Added `.streamlit/config.toml` for theme and server settings.
+   - Tab 1: Executive Case Study & Interactive Decision Memo (Cookie Cats findings, Wilson/Newcombe intervals, decision badge, effect visualization).
+   - Tab 2: Prospective Power Simulator (Interactive sliders for baseline rate, MDE, alpha, power, allocation; live sensitivity curve and sample size calculator).
+   - Tab 3: Live A/B Evaluator (Upload custom CSV or synthetic fixture, runs strict ITT validation, SRM test, Newcombe effect estimation, and exports analysis JSON).
+3. **Core Engine Extension & Testing:**
+   - Added `validate_dataframe()` to `src/experimentguard/data.py` allowing in-memory DataFrame validation using identical strict ITT rules.
+   - Added unit test `test_validate_dataframe()` in `tests/test_integrity.py` bringing test suite to 43/43 passing (100%).
+4. **Code Quality & Formatting:**
+   - `ruff check .` passed with 0 errors across all 42 files.
+   - `ruff format --check .` passed with 100% compliant formatting.
+
+
 

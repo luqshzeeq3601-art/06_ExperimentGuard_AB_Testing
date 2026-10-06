@@ -37,6 +37,11 @@ ExperimentGuard is a reproducible experimentation engine that performs strict da
 
 ```
 06_ExperimentGuard_AB_Testing/
+  LICENSE                              # MIT License (Luqman / luqshzeeq)
+  app.py                               # Root entrypoint for Streamlit web application
+  app/
+    streamlit_app.py                   # Multi-tab interactive A/B testing & simulator dashboard
+  .streamlit/config.toml               # Streamlit theme & server configuration
   configs/experiment.yaml              # Frozen protocol settings (SHA-256: d9bc1e9b...)
   data/
     source_manifest.json               # Dataset provenance, terms, and metadata
@@ -63,7 +68,8 @@ ExperimentGuard is a reproducible experimentation engine that performs strict da
       retention_rates.png              # Arm retention rates with Wilson CIs
       retention_effect.png             # Treatment effect vs practical threshold
       power_sensitivity.png            # Prospective power planning curve
-  tests/                               # 42 unit and integration tests (100% passing)
+  tests/                               # 43 unit and integration tests (100% passing)
+  requirements-app.txt                 # Lightweight dependencies for Streamlit Cloud deployment
   .github/workflows/ci.yml             # Automated CI pipeline definition
 ```
 
@@ -91,14 +97,20 @@ py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m experimentguard plan --config configs/experiment.yaml --out reports/power-v1
 ```
 
-### 3.3 Test Suite & Quality Verification
+### 3.3 Interactive Streamlit Dashboard
 ```powershell
-# Run full pytest suite (42 tests)
+# Launch the interactive web dashboard
+.\.venv\Scripts\streamlit run app.py
+```
+
+### 3.4 Test Suite & Quality Verification
+```powershell
+# Run full pytest suite (43 tests)
 .\.venv\Scripts\python.exe -m pytest tests -q
 
 # Run ruff lint and formatting verification
-.\.venv\Scripts\python.exe -m ruff check src tests
-.\.venv\Scripts\python.exe -m ruff format --check src tests
+.\.venv\Scripts\python.exe -m ruff check .
+.\.venv\Scripts\python.exe -m ruff format --check .
 
 # Execute notebook from a fresh kernel
 .\.venv\Scripts\python.exe -m nbconvert --to notebook --execute notebooks/01_cookie_cats_analysis.ipynb --ExecutePreprocessor.kernel_name=experimentguard --output executed_cookie_cats --output-dir reports/notebook
@@ -117,7 +129,7 @@ py -3.11 -m venv .venv
 | **Sensitivity** | P99 Winsorization & 10k Bootstrap | P99 Capped diff: -0.28 rounds; Bootstrap CI: [-1.34 pp, -0.31 pp] | `reports/cookie-cats-v1/analysis.json` |
 | **Prospective Power** | 80% Power at $\alpha=0.05$ | 0.25 pp $\rightarrow N=807,476$; 0.50 pp $\rightarrow N=202,800$; 1.00 pp $\rightarrow N=51,160$ | `reports/cookie-cats-v1/power_plan.csv` |
 | **Performance Benchmark** | $<60\text{ s}$, $<1\text{ GB}$ on 100k rows | **7.70 seconds**, **28.08 MB peak memory** (AMD64, Python 3.11.9) | `reports/cookie-cats-v1/run_metadata.json` |
-| **Test Coverage** | 100% test pass rate | 42 unit & integration tests passing | `tests/` |
+| **Test Coverage** | 100% test pass rate | 43 unit & integration tests passing | `tests/` |
 
 ---
 
@@ -127,3 +139,9 @@ py -3.11 -m venv .venv
 2. **Missing Timestamps:** Registration dates and cohort cutoffs are absent in the public dataset; full 7-day maturity for late-arriving cohorts is assumed.
 3. **Missing Business Guardrails:** In-app revenue, player monetization, and server latency data are not present in this dataset. Production rollout decisions require full monetization guardrails.
 4. **Illustrative Threshold:** The +0.50 pp minimum meaningful effect and 20% planning baseline are illustrative engineering assumptions.
+
+---
+
+## 6. License
+
+This project is licensed under the [MIT License](LICENSE) &copy; 2026 Luqman (luqshzeeq).
