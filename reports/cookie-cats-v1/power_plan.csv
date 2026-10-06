@@ -1,0 +1,4 @@
+scenario_id,baseline_rate,mde_absolute,mde_percentage_points,treatment_rate,alpha,target_power,expected_treatment_fraction,allocation_ratio,cohens_h,required_n_control,required_n_treatment,required_n_total,achieved_power,notes
+mde_0.25pp,0.2,0.0025,0.25,0.2025,0.05,0.8,0.5,1.0,0.006235460092980594,403738,403738,807476,0.8000000261787767,Plans detection against H0: delta=0 with two-sided test.
+mde_0.50pp,0.2,0.005,0.5,0.20500000000000002,0.05,0.8,0.5,1.0,0.012442268015263158,101400,101400,202800,0.8000004088177967,Plans detection against H0: delta=0 with two-sided test.
+mde_1.00pp,0.2,0.01,1.0,0.21000000000000002,0.05,0.8,0.5,1.0,0.02477241812103348,25580,25580,51160,0.8000006654275995,Plans detection against H0: delta=0 with two-sided test.

@@ -1,0 +1,2 @@
+metric,control_arm,treatment_arm,n_control,n_treatment,retained_control,retained_treatment,rate_control,rate_treatment,rate_control_ci_lower,rate_control_ci_upper,rate_treatment_ci_lower,rate_treatment_ci_upper,effect_absolute,effect_percentage_points,ci_diff_lower,ci_diff_upper,pvalue,test_method,decision_status
+retention_7,gate_30,gate_40,44700,45489,8502,8279,0.190201,0.182000,0.186590,0.193866,0.178481,0.185573,-0.008201,-0.820130,-0.013282,-0.003121,1.554250e-03,z_test,not_supported

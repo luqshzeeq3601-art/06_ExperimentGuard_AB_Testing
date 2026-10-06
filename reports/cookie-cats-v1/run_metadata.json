@@ -1,0 +1,31 @@
+{
+  "run_id": "cookie-cats-v1",
+  "created_at_utc": "2026-10-06T02:29:11.706447+00:00",
+  "runtime_seconds": 0.8925,
+  "data_sha256": "5ab54d761fbddcd50de7b88e4eaf7837cba4569474f50c043a4d17ee342c46bd",
+  "protocol_sha256": "d9bc1e9b684eb7238015db2ba4ecb6d55cba9313f1cdbba05f1527101be4e512",
+  "platform": {
+    "system": "Windows",
+    "release": "10",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 33 Stepping 0, AuthenticAMD"
+  },
+  "package_versions": {
+    "experimentguard": "0.1.0",
+    "pandas": "3.0.6",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2",
+    "python": "3.11.9"
+  },
+  "limitations": [
+    "Random assignment is source-reported but not independently verifiable via server logs.",
+    "Expected 50:50 allocation is assumed; SRM tested under assumed allocation.",
+    "Maturity evidence unknown: installation timestamps and cohort cutoffs are absent.",
+    "No user installation timestamps or geographic/device covariates available in public snapshot.",
+    "Original randomization mechanism is reported by source but not independently verifiable.",
+    "Maturity and follow-up window completeness cannot be proven without event logs.",
+    "Revenue and monetization outcomes are unavailable; gate movement impact on total in-app purchases cannot be directly inferred."
+  ]
+}

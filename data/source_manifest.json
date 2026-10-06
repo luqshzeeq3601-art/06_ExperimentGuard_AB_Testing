@@ -1,0 +1,33 @@
+{
+  "dataset_id": "cookie_cats_mobile_ab_testing",
+  "source_url": "https://github.com/ryanschaub/Mobile-Games-A-B-Testing-with-Cookie-Cats",
+  "publisher": "Tactile Entertainment / DataCamp / Kaggle mirror (Yufeng Sui, Rasmus Bååth)",
+  "dataset_version": "1.0 (90,189 records snapshot)",
+  "download_timestamp_utc": "2026-10-05T19:05:18Z",
+  "raw_file_path": "data/raw/cookie_cats.csv",
+  "sha256": "5ab54d761fbddcd50de7b88e4eaf7837cba4569474f50c043a4d17ee342c46bd",
+  "row_count": 90189,
+  "columns": [
+    "userid",
+    "version",
+    "sum_gamerounds",
+    "retention_1",
+    "retention_7"
+  ],
+  "license_and_terms": "Public educational dataset distributed for mobile games A/B testing analysis. Permitted for educational and portfolio analysis.",
+  "redistribution_status": "Excluded from Git by default via .gitignore; local acquisition verified.",
+  "assignment_evidence": "reported",
+  "assignment_notes": "Source documentation reports that players were randomly assigned to gate_30 (control) or gate_40 (treatment) upon installing the game. Server-side randomization logs and random seed are not independently verifiable from the static snapshot.",
+  "expected_allocation_evidence": "assumed",
+  "expected_allocation_notes": "Intended treatment fraction is assumed to be 0.50 (50:50 allocation) based on standard game feature A/B testing convention.",
+  "retention_definition": "retention_1: player returned 1 day after install; retention_7: player returned 7 days after install.",
+  "rounds_observation_window": "First 14 days after installation (sum_gamerounds).",
+  "maturity_evidence": "unknown",
+  "maturity_notes": "The public snapshot does not include installation timestamps or cohort cutoff dates; complete 7-day follow-up for late-arriving cohorts is assumed but not timestamp-verified.",
+  "unresolved_limitations": [
+    "No user installation timestamps or geographic/device covariates available in public snapshot.",
+    "Original randomization mechanism is reported by source but not independently verifiable.",
+    "Maturity and follow-up window completeness cannot be proven without event logs.",
+    "Revenue and monetization outcomes are unavailable; gate movement impact on total in-app purchases cannot be directly inferred."
+  ]
+}

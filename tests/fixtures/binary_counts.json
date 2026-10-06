@@ -1,0 +1,60 @@
+{
+  "test_cases": [
+    {
+      "name": "standard_synthetic",
+      "xA": 200,
+      "nA": 1000,
+      "xB": 250,
+      "nB": 1000,
+      "expected_rate_A": 0.20,
+      "expected_rate_B": 0.25,
+      "expected_delta": 0.05,
+      "expected_delta_pp": 5.0,
+      "expected_relative_change_percent": 25.0
+    },
+    {
+      "name": "zero_control",
+      "xA": 0,
+      "nA": 500,
+      "xB": 25,
+      "nB": 500,
+      "expected_rate_A": 0.0,
+      "expected_rate_B": 0.05,
+      "expected_delta": 0.05,
+      "expected_delta_pp": 5.0,
+      "expected_relative_change_percent": null
+    },
+    {
+      "name": "constant_zero",
+      "xA": 0,
+      "nA": 100,
+      "xB": 0,
+      "nB": 100,
+      "expected_rate_A": 0.0,
+      "expected_rate_B": 0.0,
+      "expected_delta": 0.0,
+      "expected_delta_pp": 0.0,
+      "expected_pvalue": 1.0
+    },
+    {
+      "name": "constant_ones",
+      "xA": 100,
+      "nA": 100,
+      "xB": 100,
+      "nB": 100,
+      "expected_rate_A": 1.0,
+      "expected_rate_B": 1.0,
+      "expected_delta": 0.0,
+      "expected_delta_pp": 0.0,
+      "expected_pvalue": 1.0
+    },
+    {
+      "name": "small_cells_fisher",
+      "xA": 1,
+      "nA": 20,
+      "xB": 4,
+      "nB": 20,
+      "expected_test_method": "fisher_exact"
+    }
+  ]
+}

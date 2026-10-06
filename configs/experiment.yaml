@@ -1,0 +1,18 @@
+experiment_id: cookie_cats_gate_placement
+protocol_version: '1.0'
+control: gate_30
+treatment: gate_40
+primary_metric: retention_7
+alpha: 0.05
+alternative: two-sided
+confidence_method: newcomb
+minimum_meaningful_effect_absolute: 0.005
+expected_treatment_fraction: 0.5
+allocation_evidence: assumed
+srm_alpha: 0.001
+seed: 42
+bootstrap_replicates: 10000
+planning:
+  baseline_rate: 0.20
+  target_power: 0.80
+  mde_absolute: [0.0025, 0.005, 0.01]

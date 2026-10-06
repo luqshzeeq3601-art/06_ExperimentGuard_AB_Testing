@@ -1,0 +1,36 @@
+# Python virtual environment
+.venv/
+venv/
+ENV/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.pytest_tmp/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Operating system artifacts
+.DS_Store
+Thumbs.db
+
+# Reports and temporary runs
+reports/ci-*/
+reports/tmp*/
+reports/quality-check/
+reports/power-v1/
+
+# Package build artifacts
+*.egg-info/
+build/
+dist/
+
+# Raw data with unverified redistribution rights
+data/raw/

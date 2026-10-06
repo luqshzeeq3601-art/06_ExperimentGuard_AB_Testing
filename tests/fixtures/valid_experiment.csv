@@ -1,0 +1,11 @@
+userid,version,sum_gamerounds,retention_1,retention_7
+101,gate_30,12,True,False
+102,gate_30,0,False,False
+103,gate_30,45,True,True
+104,gate_30,5,True,False
+105,gate_30,80,True,True
+201,gate_40,15,True,False
+202,gate_40,0,False,False
+203,gate_40,60,True,False
+204,gate_40,2,False,False
+205,gate_40,95,True,True
